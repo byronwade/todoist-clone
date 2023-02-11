@@ -2,6 +2,8 @@
 import "./globals.css";
 import { ChakraProvider } from "@chakra-ui/react";
 import { RecoilRoot } from "recoil";
+import { Header } from "./components/Layout/Header";
+import { Content } from "./components/Layout/Content";
 
 export default function RootLayout({
 	children,
@@ -13,7 +15,11 @@ export default function RootLayout({
 			<head />
 			<body>
 				<RecoilRoot>
-					<ChakraProvider>{children}</ChakraProvider>
+					<ChakraProvider>
+						<Header />
+						{children}
+						<Content />
+					</ChakraProvider>
 				</RecoilRoot>
 			</body>
 		</html>
